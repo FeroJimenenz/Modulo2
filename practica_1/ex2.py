@@ -8,17 +8,25 @@ num=int(sys.argv[1])
 
 def mi_arregloFC(num):
     lista=[]
-    for i in range(num):
-        lista.append(i+1)
+    for i in range(1,num+1):
+        lista.append(i)
         
     return print(lista)
-    
+
 def regios(num):
     lista=[]
-    for n in range(1,num):
-        if num % n == 0:
-            lista.append(n)
-
+    for i in range(2, num + 1):
+        primos = True
+        for j in range(2,i):
+            if i == j:
+               break
+            elif i%j == 0:
+               primos = False
+            else:
+               continue
+        if primos == True:
+            lista.append(i)
+            
     return print(lista)
     
 mi_arregloFC(num)
